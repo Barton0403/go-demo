@@ -10,13 +10,18 @@ func main() {
 
 func deferCall() (int) {
   var i int
+
   defer func() {
     i++
     fmt.Println("defer1", i)
   }()
+
   defer func() {
     i++
     fmt.Println("defer2", i)
   }()
+  
+  fmt.Println("defer start")
+
   return i
 }
